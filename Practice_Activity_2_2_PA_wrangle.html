@@ -1,0 +1,2800 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Intro</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Practice_Activity_2_2_PA_wrangle_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Practice_Activity_2_2_PA_wrangle_files/libs/quarto-html/quarto.js"></script>
+<script src="Practice_Activity_2_2_PA_wrangle_files/libs/quarto-html/popper.min.js"></script>
+<script src="Practice_Activity_2_2_PA_wrangle_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Practice_Activity_2_2_PA_wrangle_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Practice_Activity_2_2_PA_wrangle_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Practice_Activity_2_2_PA_wrangle_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Practice_Activity_2_2_PA_wrangle_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Practice_Activity_2_2_PA_wrangle_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Practice_Activity_2_2_PA_wrangle_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Intro</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In this PA, you will practice altering data frame objects in order to solve a riddle.</p>
+<section id="advice-for-troubleshooting-your-code" class="level3">
+<h3 class="anchored" data-anchor-id="advice-for-troubleshooting-your-code">Advice for troubleshooting your code</h3>
+<section id="check-results-often" class="level4">
+<h4 class="anchored" data-anchor-id="check-results-often">Check results often</h4>
+<p>If a chunk of code runs smoothly without giving you any error or warnings this does not necessarily mean it accomplished the desired task.</p>
+<p>It is a good habit to check the results of your code every time you finish a task.</p>
+<p>If you created or updated a data frame, make sure your edits did what you hoped. Use the <em>Environment</em> or the <code>head()</code> function to investigate your changes.</p>
+</section>
+<section id="document-your-work" class="level4">
+<h4 class="anchored" data-anchor-id="document-your-work">Document your work</h4>
+<p>In the text before the code chunk, make sure to briefly state what the point of the chunk is. This will remind later readers - which might be your future self! - what the desired output is.</p>
+<p>Use comments in the code to give quick explanations of the goals of complex steps.</p>
+</section>
+<section id="two-heads-are-better-than-one" class="level4">
+<h4 class="anchored" data-anchor-id="two-heads-are-better-than-one">Two heads are better than one</h4>
+<p>It can be hard to spot bugs in code that you yourself wrote.t (Have you ever sent a text message and not spotted an obvious typo? Same idea!)</p>
+<p>Work with people around you if you can - if something goes wrong, ask a friend to take a peek at your code and see if any glaring errors (like <em>syntax error</em>) pop out.</p>
+</section>
+<section id="explain-your-code-out-loud" class="level4">
+<h4 class="anchored" data-anchor-id="explain-your-code-out-loud">Explain your code out loud</h4>
+<p>The best way to troubleshoot a sneaky bug is to explain out loud each step of your code, and what you hoped to accomplish.</p>
+<p>If you are alone, try <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">Rubber Duck Debugging</a>!</p>
+</section>
+<section id="google-is-your-friend" class="level4">
+<h4 class="anchored" data-anchor-id="google-is-your-friend">Google is your friend</h4>
+<p>The whole of the internet is at your disposal! Use it early, use it often.</p>
+<p>Copy-paste the exact error message into Google. Chances are, somebody else had a similar problem and got a similar message.</p>
+<p>Include package names in your search terms. For example, “bar plot in plotnine with pandas data frame” is a better search than “bar plot in python”.</p>
+</section>
+</section>
+<section id="part-one-data-import-and-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="part-one-data-import-and-cleaning">Part One: Data import and cleaning</h2>
+<p>This section will walk you through some steps to clean up today’s dataset, so that you can use it more easily in Part Two.</p>
+<p>First, we declare our package dependencies and load the data.</p>
+<p>(Note that the data loading function <code>read_csv</code> will give you an outpouring of helpful information about the dataset. If you do not see the word “error”, there is nothing to be concerned about.)</p>
+<div class="cell" data-outputid="1f35174d-6ac7-4dbd-d162-2d840e299078" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>colleges <span class="op">=</span> pd.read_csv(<span class="st">"https://www.dropbox.com/s/bt5hvctdevhbq6j/colleges.csv?dl=1"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>colleges</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="78">
+
+  <div id="df-a86456ec-3551-46ab-8f74-4838a1add6c8" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">INSTNM</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">STABBR</th>
+<th data-quarto-table-cell-role="th">ZIP</th>
+<th data-quarto-table-cell-role="th">CONTROL</th>
+<th data-quarto-table-cell-role="th">ADM_RATE</th>
+<th data-quarto-table-cell-role="th">SAT_AVG</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_IN</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_OUT</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">LO_INC_COMP_2YR_TRANS_YR3_RT</th>
+<th data-quarto-table-cell-role="th">NOLOAN_COMP_ORIG_YR4_RT</th>
+<th data-quarto-table-cell-role="th">OPENADMP</th>
+<th data-quarto-table-cell-role="th">PELL_COMP_4YR_TRANS_YR3_RT</th>
+<th data-quarto-table-cell-role="th">DEATH_YR2_RT</th>
+<th data-quarto-table-cell-role="th">NOLOAN_UNKN_ORIG_YR2_RT</th>
+<th data-quarto-table-cell-role="th">NOT1STGEN_WDRAW_ORIG_YR6_RT</th>
+<th data-quarto-table-cell-role="th">HI_INC_YR8_N</th>
+<th data-quarto-table-cell-role="th">CUML_DEBT_P90</th>
+<th data-quarto-table-cell-role="th">C100_L4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Alabama A &amp; M University</td>
+<td>Normal</td>
+<td>AL</td>
+<td>35762</td>
+<td>1</td>
+<td>0.9027</td>
+<td>929.0</td>
+<td>9857.0</td>
+<td>18236.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>University of Alabama at Birmingham</td>
+<td>Birmingham</td>
+<td>AL</td>
+<td>35294-0110</td>
+<td>1</td>
+<td>0.9181</td>
+<td>1195.0</td>
+<td>8328.0</td>
+<td>19032.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Amridge University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36117-3553</td>
+<td>2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6900.0</td>
+<td>6900.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>University of Alabama in Huntsville</td>
+<td>Huntsville</td>
+<td>AL</td>
+<td>35899</td>
+<td>1</td>
+<td>0.8123</td>
+<td>1322.0</td>
+<td>10280.0</td>
+<td>21480.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Alabama State University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36104-0271</td>
+<td>1</td>
+<td>0.9787</td>
+<td>935.0</td>
+<td>11068.0</td>
+<td>19396.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7053</td>
+<td>7054</td>
+<td>Arizona State University at Yuma</td>
+<td>Yuma</td>
+<td>AZ</td>
+<td>853656900</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7054</td>
+<td>7055</td>
+<td>Bay Area Medical Academy - San Jose Satellite ...</td>
+<td>San Jose</td>
+<td>CA</td>
+<td>95113</td>
+<td>3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7055</td>
+<td>7056</td>
+<td>High Desert Medical College</td>
+<td>Lancaster</td>
+<td>CA</td>
+<td>935340000</td>
+<td>3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7056</td>
+<td>7057</td>
+<td>BCI - Malden</td>
+<td>Malden</td>
+<td>MA</td>
+<td>21480000</td>
+<td>2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7057</td>
+<td>7058</td>
+<td>Health Career Institute- Lauderdale Lakes</td>
+<td>Lauderdale Lakes</td>
+<td>FL</td>
+<td>333137268</td>
+<td>3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>22575.0</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>7058 rows × 27 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a86456ec-3551-46ab-8f74-4838a1add6c8')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-a86456ec-3551-46ab-8f74-4838a1add6c8 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-a86456ec-3551-46ab-8f74-4838a1add6c8');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-b7ed0c61-6553-4f92-a94d-88f40ecf6c65">
+  <button class="colab-df-quickchart" onclick="quickchart('df-b7ed0c61-6553-4f92-a94d-88f40ecf6c65')" title="Suggest charts." style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-b7ed0c61-6553-4f92-a94d-88f40ecf6c65 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="01bb5a55-982f-4743-81f6-458053d6cd20" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>colleges_clean <span class="op">=</span> colleges[(colleges[<span class="st">'CONTROL'</span>] <span class="op">!=</span> <span class="dv">3</span>)]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>colleges_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="79">
+
+  <div id="df-183a73f0-2a9a-4819-9f67-faf0aaea8632" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">INSTNM</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">STABBR</th>
+<th data-quarto-table-cell-role="th">ZIP</th>
+<th data-quarto-table-cell-role="th">CONTROL</th>
+<th data-quarto-table-cell-role="th">ADM_RATE</th>
+<th data-quarto-table-cell-role="th">SAT_AVG</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_IN</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_OUT</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">LO_INC_COMP_2YR_TRANS_YR3_RT</th>
+<th data-quarto-table-cell-role="th">NOLOAN_COMP_ORIG_YR4_RT</th>
+<th data-quarto-table-cell-role="th">OPENADMP</th>
+<th data-quarto-table-cell-role="th">PELL_COMP_4YR_TRANS_YR3_RT</th>
+<th data-quarto-table-cell-role="th">DEATH_YR2_RT</th>
+<th data-quarto-table-cell-role="th">NOLOAN_UNKN_ORIG_YR2_RT</th>
+<th data-quarto-table-cell-role="th">NOT1STGEN_WDRAW_ORIG_YR6_RT</th>
+<th data-quarto-table-cell-role="th">HI_INC_YR8_N</th>
+<th data-quarto-table-cell-role="th">CUML_DEBT_P90</th>
+<th data-quarto-table-cell-role="th">C100_L4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>Alabama A &amp; M University</td>
+<td>Normal</td>
+<td>AL</td>
+<td>35762</td>
+<td>1</td>
+<td>0.9027</td>
+<td>929.0</td>
+<td>9857.0</td>
+<td>18236.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>University of Alabama at Birmingham</td>
+<td>Birmingham</td>
+<td>AL</td>
+<td>35294-0110</td>
+<td>1</td>
+<td>0.9181</td>
+<td>1195.0</td>
+<td>8328.0</td>
+<td>19032.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>Amridge University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36117-3553</td>
+<td>2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6900.0</td>
+<td>6900.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>University of Alabama in Huntsville</td>
+<td>Huntsville</td>
+<td>AL</td>
+<td>35899</td>
+<td>1</td>
+<td>0.8123</td>
+<td>1322.0</td>
+<td>10280.0</td>
+<td>21480.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>Alabama State University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36104-0271</td>
+<td>1</td>
+<td>0.9787</td>
+<td>935.0</td>
+<td>11068.0</td>
+<td>19396.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7050</td>
+<td>7051</td>
+<td>Arizona State University at Tucson</td>
+<td>Tucson</td>
+<td>AZ</td>
+<td>857454284</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7051</td>
+<td>7052</td>
+<td>Arizona State University - ASU Colleges at Lak...</td>
+<td>Lake Havasu City</td>
+<td>AZ</td>
+<td>864036877</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6904.0</td>
+<td>10106.0</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7052</td>
+<td>7053</td>
+<td>Arizona State University at The Gila Valley</td>
+<td>Thatcher</td>
+<td>AZ</td>
+<td>855525545</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7053</td>
+<td>7054</td>
+<td>Arizona State University at Yuma</td>
+<td>Yuma</td>
+<td>AZ</td>
+<td>853656900</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7056</td>
+<td>7057</td>
+<td>BCI - Malden</td>
+<td>Malden</td>
+<td>MA</td>
+<td>21480000</td>
+<td>2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>4089 rows × 27 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-183a73f0-2a9a-4819-9f67-faf0aaea8632')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-183a73f0-2a9a-4819-9f67-faf0aaea8632 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-183a73f0-2a9a-4819-9f67-faf0aaea8632');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-9f40237c-b2ae-4f07-a03e-cfff8f37dfbd">
+  <button class="colab-df-quickchart" onclick="quickchart('df-9f40237c-b2ae-4f07-a03e-cfff8f37dfbd')" title="Suggest charts." style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-9f40237c-b2ae-4f07-a03e-cfff8f37dfbd button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<p>The code chunks in this section will cause an error and/or do the desired task incorrectly. (Even the chunks that run without error are not correct!) You will need to find the mistake, and correct it, to complete the intended action.</p>
+<p>None of the <em>text</em> is incorrect, only the <em>code</em> - your goal is to make the code do exactly what the documentation claims it will.</p>
+<section id="narrow-down-the-columns-to-variables-of-interest" class="level4">
+<h4 class="anchored" data-anchor-id="narrow-down-the-columns-to-variables-of-interest">1. Narrow down the columns to variables of interest</h4>
+<p>There are too many variables in this dataset. We don’t need all of them. We will limit our dataset down to only:</p>
+<p>Name of the institution City, State, and ZIP code of the institution The Admissions Rate The average SAT score The number of undergraduate students The in and out of state tuitions Whether the school is public or private The “REGION” variable.</p>
+<div class="cell" data-outputid="e6302b66-4717-461a-b0a7-be4ae46bb88f" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>colleges_clean <span class="op">=</span> colleges.loc[:, [<span class="st">'INSTNM'</span>, <span class="st">'CITY'</span>, <span class="st">'STABBR'</span>, <span class="st">'ZIP'</span>, <span class="st">'ADM_RATE'</span>, <span class="st">'SAT_AVG'</span>, <span class="st">'UGDS'</span>, <span class="st">'REGION'</span>, <span class="st">'TUITIONFEE_IN'</span>, <span class="st">'TUITIONFEE_OUT'</span>, <span class="st">'CONTROL'</span>]]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>colleges_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="80">
+
+  <div id="df-75f3f3e1-887c-4db5-a1f5-4679787b5055" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">INSTNM</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">STABBR</th>
+<th data-quarto-table-cell-role="th">ZIP</th>
+<th data-quarto-table-cell-role="th">ADM_RATE</th>
+<th data-quarto-table-cell-role="th">SAT_AVG</th>
+<th data-quarto-table-cell-role="th">UGDS</th>
+<th data-quarto-table-cell-role="th">REGION</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_IN</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_OUT</th>
+<th data-quarto-table-cell-role="th">CONTROL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Alabama A &amp; M University</td>
+<td>Normal</td>
+<td>AL</td>
+<td>35762</td>
+<td>0.9027</td>
+<td>929.0</td>
+<td>4824.0</td>
+<td>5</td>
+<td>9857.0</td>
+<td>18236.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>University of Alabama at Birmingham</td>
+<td>Birmingham</td>
+<td>AL</td>
+<td>35294-0110</td>
+<td>0.9181</td>
+<td>1195.0</td>
+<td>12866.0</td>
+<td>5</td>
+<td>8328.0</td>
+<td>19032.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Amridge University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36117-3553</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>322.0</td>
+<td>5</td>
+<td>6900.0</td>
+<td>6900.0</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>University of Alabama in Huntsville</td>
+<td>Huntsville</td>
+<td>AL</td>
+<td>35899</td>
+<td>0.8123</td>
+<td>1322.0</td>
+<td>6917.0</td>
+<td>5</td>
+<td>10280.0</td>
+<td>21480.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Alabama State University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36104-0271</td>
+<td>0.9787</td>
+<td>935.0</td>
+<td>4189.0</td>
+<td>5</td>
+<td>11068.0</td>
+<td>19396.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7053</td>
+<td>Arizona State University at Yuma</td>
+<td>Yuma</td>
+<td>AZ</td>
+<td>853656900</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7054</td>
+<td>Bay Area Medical Academy - San Jose Satellite ...</td>
+<td>San Jose</td>
+<td>CA</td>
+<td>95113</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7055</td>
+<td>High Desert Medical College</td>
+<td>Lancaster</td>
+<td>CA</td>
+<td>935340000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7056</td>
+<td>BCI - Malden</td>
+<td>Malden</td>
+<td>MA</td>
+<td>21480000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7057</td>
+<td>Health Career Institute- Lauderdale Lakes</td>
+<td>Lauderdale Lakes</td>
+<td>FL</td>
+<td>333137268</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>5</td>
+<td>22575.0</td>
+<td>NaN</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>7058 rows × 11 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-75f3f3e1-887c-4db5-a1f5-4679787b5055')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-75f3f3e1-887c-4db5-a1f5-4679787b5055 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-75f3f3e1-887c-4db5-a1f5-4679787b5055');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-243fd89f-6193-45bf-8c23-0adbcfcf5f83">
+  <button class="colab-df-quickchart" onclick="quickchart('df-243fd89f-6193-45bf-8c23-0adbcfcf5f83')" title="Suggest charts." style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-243fd89f-6193-45bf-8c23-0adbcfcf5f83 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="remove-observations-that-arent-needed" class="level4">
+<h4 class="anchored" data-anchor-id="remove-observations-that-arent-needed">2. Remove observations that aren’t needed</h4>
+<p>Drop the schools that are “private for-profit” (category 3). We will not need these for the puzzle.</p>
+<div class="cell" data-outputid="edfddffa-a8ea-42a1-c77e-584db2d52d82" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>colleges_clean <span class="op">=</span> colleges_clean[(colleges_clean[<span class="st">'CONTROL'</span>] <span class="op">!=</span> <span class="dv">3</span>)]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>colleges_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="81">
+
+  <div id="df-21ab2ff1-2af1-4d4f-9b9b-747a5506da62" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">INSTNM</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">STABBR</th>
+<th data-quarto-table-cell-role="th">ZIP</th>
+<th data-quarto-table-cell-role="th">ADM_RATE</th>
+<th data-quarto-table-cell-role="th">SAT_AVG</th>
+<th data-quarto-table-cell-role="th">UGDS</th>
+<th data-quarto-table-cell-role="th">REGION</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_IN</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_OUT</th>
+<th data-quarto-table-cell-role="th">CONTROL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Alabama A &amp; M University</td>
+<td>Normal</td>
+<td>AL</td>
+<td>35762</td>
+<td>0.9027</td>
+<td>929.0</td>
+<td>4824.0</td>
+<td>5</td>
+<td>9857.0</td>
+<td>18236.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>University of Alabama at Birmingham</td>
+<td>Birmingham</td>
+<td>AL</td>
+<td>35294-0110</td>
+<td>0.9181</td>
+<td>1195.0</td>
+<td>12866.0</td>
+<td>5</td>
+<td>8328.0</td>
+<td>19032.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Amridge University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36117-3553</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>322.0</td>
+<td>5</td>
+<td>6900.0</td>
+<td>6900.0</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>University of Alabama in Huntsville</td>
+<td>Huntsville</td>
+<td>AL</td>
+<td>35899</td>
+<td>0.8123</td>
+<td>1322.0</td>
+<td>6917.0</td>
+<td>5</td>
+<td>10280.0</td>
+<td>21480.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Alabama State University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36104-0271</td>
+<td>0.9787</td>
+<td>935.0</td>
+<td>4189.0</td>
+<td>5</td>
+<td>11068.0</td>
+<td>19396.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7050</td>
+<td>Arizona State University at Tucson</td>
+<td>Tucson</td>
+<td>AZ</td>
+<td>857454284</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7051</td>
+<td>Arizona State University - ASU Colleges at Lak...</td>
+<td>Lake Havasu City</td>
+<td>AZ</td>
+<td>864036877</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6</td>
+<td>6904.0</td>
+<td>10106.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7052</td>
+<td>Arizona State University at The Gila Valley</td>
+<td>Thatcher</td>
+<td>AZ</td>
+<td>855525545</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7053</td>
+<td>Arizona State University at Yuma</td>
+<td>Yuma</td>
+<td>AZ</td>
+<td>853656900</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7056</td>
+<td>BCI - Malden</td>
+<td>Malden</td>
+<td>MA</td>
+<td>21480000</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>4089 rows × 11 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-21ab2ff1-2af1-4d4f-9b9b-747a5506da62')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-21ab2ff1-2af1-4d4f-9b9b-747a5506da62 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-21ab2ff1-2af1-4d4f-9b9b-747a5506da62');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-c68b9abf-7038-4814-987d-b0ef0d9af854">
+  <button class="colab-df-quickchart" onclick="quickchart('df-c68b9abf-7038-4814-987d-b0ef0d9af854')" title="Suggest charts." style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-c68b9abf-7038-4814-987d-b0ef0d9af854 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="adjust-variable-types-numeric" class="level3">
+<h3 class="anchored" data-anchor-id="adjust-variable-types-numeric">3. Adjust variable types: Numeric</h3>
+<p>Some of the columns of the dataset were automatically understood by the computer to be categorical, due to missing data appearing like strings.</p>
+<p>Adjust the appropriate columns to be numeric.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>colleges_clean [<span class="st">'TUITIONFEE_IN'</span>] <span class="op">=</span> colleges_clean [<span class="st">'TUITIONFEE_IN'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>colleges_clean [<span class="st">'TUITIONFEE_OUT'</span>] <span class="op">=</span> colleges_clean [<span class="st">'TUITIONFEE_OUT'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>colleges_clean [<span class="st">'SAT_AVG'</span>] <span class="op">=</span> colleges_clean [<span class="st">'SAT_AVG'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>colleges_clean [<span class="st">'ADM_RATE'</span>] <span class="op">=</span> colleges_clean [<span class="st">'ADM_RATE'</span>].astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="adjust-variable-types-categorical" class="level3">
+<h3 class="anchored" data-anchor-id="adjust-variable-types-categorical">4. Adjust variable types: Categorical</h3>
+<p>Similarly, columns of the dataset that are not numbers are automatically understood by the computer to be strings.</p>
+<p>We know, however, that some variables are truly <em>categorical</em>, in that there are only a few categories (or “levels”) that can be values of the column.</p>
+<p>Adjust the appropriate columns to be understood as categorical.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>colleges_clean[<span class="st">'CONTROL'</span>] <span class="op">=</span> colleges_clean[<span class="st">'CONTROL'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>colleges_clean[<span class="st">'REGION'</span>] <span class="op">=</span> colleges_clean[<span class="st">'REGION'</span>].astype(<span class="bu">str</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="calculate-new-variables" class="level4">
+<h4 class="anchored" data-anchor-id="calculate-new-variables">5. Calculate new variables</h4>
+<p>Create a new variable called TUITION_DIFF which contains the difference between in and out of state costs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>colleges_clean[<span class="st">'TUITION_DIFF'</span>] <span class="op">=</span> colleges_clean[<span class="st">'TUITIONFEE_OUT'</span>] <span class="op">-</span> colleges_clean[<span class="st">'TUITIONFEE_IN'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="deal-with-missing-data" class="level4">
+<h4 class="anchored" data-anchor-id="deal-with-missing-data">6. Deal with missing data</h4>
+<p>Drop all the rows with missing data.</p>
+<p>(It is often a terrible idea to simply drop all rows with <em>any</em> missing data! Usually, even if <em>some</em> of the information is missing, we don’t want to throw out the entire row. In this example, however, we’ll be lazy.)</p>
+<div class="cell" data-outputid="ed7b134c-36ef-4599-c804-0fc868adc351" data-execution_count="85">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>colleges_clean <span class="op">=</span> colleges_clean.dropna(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>colleges_clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="85">
+
+  <div id="df-b0d166da-948e-4085-8b39-82be88dce9c6" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">INSTNM</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">STABBR</th>
+<th data-quarto-table-cell-role="th">ZIP</th>
+<th data-quarto-table-cell-role="th">ADM_RATE</th>
+<th data-quarto-table-cell-role="th">SAT_AVG</th>
+<th data-quarto-table-cell-role="th">UGDS</th>
+<th data-quarto-table-cell-role="th">REGION</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_IN</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_OUT</th>
+<th data-quarto-table-cell-role="th">CONTROL</th>
+<th data-quarto-table-cell-role="th">TUITION_DIFF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Alabama A &amp; M University</td>
+<td>Normal</td>
+<td>AL</td>
+<td>35762</td>
+<td>0.9027</td>
+<td>929.0</td>
+<td>4824.0</td>
+<td>5</td>
+<td>9857.0</td>
+<td>18236.0</td>
+<td>1</td>
+<td>8379.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>University of Alabama at Birmingham</td>
+<td>Birmingham</td>
+<td>AL</td>
+<td>35294-0110</td>
+<td>0.9181</td>
+<td>1195.0</td>
+<td>12866.0</td>
+<td>5</td>
+<td>8328.0</td>
+<td>19032.0</td>
+<td>1</td>
+<td>10704.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3</td>
+<td>University of Alabama in Huntsville</td>
+<td>Huntsville</td>
+<td>AL</td>
+<td>35899</td>
+<td>0.8123</td>
+<td>1322.0</td>
+<td>6917.0</td>
+<td>5</td>
+<td>10280.0</td>
+<td>21480.0</td>
+<td>1</td>
+<td>11200.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Alabama State University</td>
+<td>Montgomery</td>
+<td>AL</td>
+<td>36104-0271</td>
+<td>0.9787</td>
+<td>935.0</td>
+<td>4189.0</td>
+<td>5</td>
+<td>11068.0</td>
+<td>19396.0</td>
+<td>1</td>
+<td>8328.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5</td>
+<td>The University of Alabama</td>
+<td>Tuscaloosa</td>
+<td>AL</td>
+<td>35487-0166</td>
+<td>0.5330</td>
+<td>1278.0</td>
+<td>32387.0</td>
+<td>5</td>
+<td>10780.0</td>
+<td>28100.0</td>
+<td>1</td>
+<td>17320.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6391</td>
+<td>Milligan College</td>
+<td>Milligan College</td>
+<td>TN</td>
+<td>37682</td>
+<td>0.5776</td>
+<td>1184.0</td>
+<td>806.0</td>
+<td>5</td>
+<td>32500.0</td>
+<td>32500.0</td>
+<td>2</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6401</td>
+<td>Emory University-Oxford College</td>
+<td>Oxford</td>
+<td>GA</td>
+<td>30054</td>
+<td>0.2894</td>
+<td>1420.0</td>
+<td>979.0</td>
+<td>5</td>
+<td>48502.0</td>
+<td>48502.0</td>
+<td>2</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6424</td>
+<td>Husson University</td>
+<td>Bangor</td>
+<td>ME</td>
+<td>04401-2929</td>
+<td>0.8627</td>
+<td>1048.0</td>
+<td>2652.0</td>
+<td>1</td>
+<td>17561.0</td>
+<td>17561.0</td>
+<td>2</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6532</td>
+<td>Piedmont International University</td>
+<td>Winston-Salem</td>
+<td>NC</td>
+<td>27101</td>
+<td>0.3633</td>
+<td>919.0</td>
+<td>336.0</td>
+<td>5</td>
+<td>9480.0</td>
+<td>9480.0</td>
+<td>2</td>
+<td>0.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6589</td>
+<td>Purdue University Northwest</td>
+<td>Hammond</td>
+<td>IN</td>
+<td>46323</td>
+<td>0.3467</td>
+<td>1082.0</td>
+<td>8665.0</td>
+<td>3</td>
+<td>7582.0</td>
+<td>17129.0</td>
+<td>1</td>
+<td>9547.0</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>1310 rows × 12 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b0d166da-948e-4085-8b39-82be88dce9c6')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-b0d166da-948e-4085-8b39-82be88dce9c6 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-b0d166da-948e-4085-8b39-82be88dce9c6');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-bf02073b-9d00-4674-ac4b-5b2cab5964b5">
+  <button class="colab-df-quickchart" onclick="quickchart('df-bf02073b-9d00-4674-ac4b-5b2cab5964b5')" title="Suggest charts." style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-bf02073b-9d00-4674-ac4b-5b2cab5964b5 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="part-two-identify-the-mystery-college" class="level2">
+<h2 class="anchored" data-anchor-id="part-two-identify-the-mystery-college">Part Two: Identify the mystery college</h2>
+<p>Wow! Your best friend Ephelia has been accepted to the college of her dreams! Unfortunately, Ephelia is a very mysterious person, and she won’t tell you directly which college this is. You’ll have to use her clues to figure out which school is her dream school.</p>
+<p>Clues:</p>
+<ol type="1">
+<li><p>This college is located in Region 1.</p></li>
+<li><p>This college’s admission rate is in the first quartile for the region.</p></li>
+<li><p>This college charges the same for in- and out-of-state tuition.</p></li>
+<li><p>The average SAT score of this college is an odd number.</p></li>
+<li><p>This college is NOT in New Hampshire or in the city of Boston.</p></li>
+<li><p>More than 3,000 people apply to this college every year. (Hint: Make a new variable to compute how many people apply. Assume the size of an incoming class is 1/4 of the total undergraduate population, and remember that not everyone who <em>applies</em> is <em>admitted</em>.)</p></li>
+<li><p>Ephelia is not going to an Ivy League school.</p></li>
+<li><p>Of the two options remaining at this step, Ephelia will attend the cheaper one.</p></li>
+</ol>
+<div class="cell" data-outputid="a9773a46-74b7-4786-9019-938505d5d3a2" data-execution_count="86">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>school <span class="op">=</span> colleges_clean[colleges_clean[<span class="st">'REGION'</span>] <span class="op">==</span> <span class="st">"1"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>q1 <span class="op">=</span> school[<span class="st">'ADM_RATE'</span>].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>school <span class="op">=</span> school[school[<span class="st">'ADM_RATE'</span>] <span class="op">&lt;=</span> q1]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>school <span class="op">=</span> school[school[<span class="st">'TUITION_DIFF'</span>] <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>school <span class="op">=</span> school[school[<span class="st">'SAT_AVG'</span>] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>]</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>school <span class="op">=</span> school[<span class="op">~</span>school[<span class="st">'CITY'</span>].isin([<span class="st">"New Hampshire"</span>, <span class="st">"Boston"</span>])]</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>school[<span class="st">'APPS'</span>] <span class="op">=</span> (school[<span class="st">'UGDS'</span>] <span class="op">/</span> <span class="dv">4</span>) <span class="op">/</span> school[<span class="st">'ADM_RATE'</span>]</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>school <span class="op">=</span> school[school[<span class="st">'APPS'</span>] <span class="op">&gt;</span> <span class="dv">3000</span>]</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>school <span class="op">=</span> school[<span class="op">~</span>school[<span class="st">'INSTNM'</span>].isin([<span class="st">"Harvard University"</span>, <span class="st">"Dartmouth College"</span>])]</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>school.sort_values(by<span class="op">=</span><span class="st">'TUITIONFEE_IN'</span>, ascending<span class="op">=</span><span class="va">True</span>).head(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="86">
+
+  <div id="df-8dee0032-5cf7-4418-b228-734fbd6bd361" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">INSTNM</th>
+<th data-quarto-table-cell-role="th">CITY</th>
+<th data-quarto-table-cell-role="th">STABBR</th>
+<th data-quarto-table-cell-role="th">ZIP</th>
+<th data-quarto-table-cell-role="th">ADM_RATE</th>
+<th data-quarto-table-cell-role="th">SAT_AVG</th>
+<th data-quarto-table-cell-role="th">UGDS</th>
+<th data-quarto-table-cell-role="th">REGION</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_IN</th>
+<th data-quarto-table-cell-role="th">TUITIONFEE_OUT</th>
+<th data-quarto-table-cell-role="th">CONTROL</th>
+<th data-quarto-table-cell-role="th">TUITION_DIFF</th>
+<th data-quarto-table-cell-role="th">APPS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1619</td>
+<td>Williams College</td>
+<td>Williamstown</td>
+<td>MA</td>
+<td>1267</td>
+<td>0.1458</td>
+<td>1493.0</td>
+<td>2033.0</td>
+<td>1</td>
+<td>53550.0</td>
+<td>53550.0</td>
+<td>2</td>
+<td>0.0</td>
+<td>3485.939643</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8dee0032-5cf7-4418-b228-734fbd6bd361')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-8dee0032-5cf7-4418-b228-734fbd6bd361 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-8dee0032-5cf7-4418-b228-734fbd6bd361');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
